@@ -1,4 +1,7 @@
 def generate_diff(file1, file2):
+    def replace_boll(text):
+        result = text.replace("True", "true").replace("False", "false")
+        return result
     result = ''
     for key in sorted(set(file1.keys()) | set(file2.keys())):
         if key in file1 and key in file2:
@@ -11,5 +14,5 @@ def generate_diff(file1, file2):
             result += f'- {key}: {file1[key]}\n'
         else:
             result += f'+ {key}: {file2[key]}\n'
-    return result
+    return replace_boll(result).strip()
 
