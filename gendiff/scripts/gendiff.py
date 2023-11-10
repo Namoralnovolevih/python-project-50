@@ -10,6 +10,7 @@ parser.add_argument('second_file')
 parser.add_argument('-f', '--format', help='set format of output')
 args = parser.parse_args()
 
+
 def main():
     with open(args.first_file) as f1:
         data1 = json.load(f1)
@@ -17,7 +18,6 @@ def main():
         data2 = json.load(f2)
     diff = generate_diff(data1, data2)
     print(diff)
-
 
 
 if __name__ == '__main__':

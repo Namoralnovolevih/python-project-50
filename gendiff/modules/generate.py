@@ -10,9 +10,8 @@ def generate_diff(file1, file2):
             else:
                 result += f'- {key}: {file1[key]}\n'
                 result += f'+ {key}: {file2[key]}\n'
-        elif key in file1: 
+        elif key in file1:
             result += f'- {key}: {file1[key]}\n'
         else:
             result += f'+ {key}: {file2[key]}\n'
     return replace_boll(result).strip()
-
