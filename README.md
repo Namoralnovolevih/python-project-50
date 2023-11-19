@@ -7,5 +7,8 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/fe01c41e63c7fd831c63/test_coverage)](https://codeclimate.com/github/Namoralnovolevih/python-project-50/test_coverage)
 
-### Пример работы пакета с json-файлами
-[![asciicast](https://asciinema.org/a/EMX3Toje8IJC1fkpndmFJnBNZ.svg)](https://asciinema.org/a/EMX3Toje8IJC1fkpndmFJnBNZ)
+### Пример работы пакета с плоскими json-файлами
+[![asciicast](https://asciinema.org/a/d0QDwyiKRT45YRFm7thb3B3aT.svg)](https://asciinema.org/a/d0QDwyiKRT45YRFm7thb3B3aT)
+
+### Пример работы пакета с плоскими yaml-файлами
+[![asciicast](https://asciinema.org/a/I69gWdMBBoVikxNKZMcxkc1V7.svg)](https://asciinema.org/a/I69gWdMBBoVikxNKZMcxkc1V7)
