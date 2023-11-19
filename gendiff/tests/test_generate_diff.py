@@ -1,5 +1,4 @@
 import os
-import json
 from gendiff.modules.generate import generate_diff
 from gendiff.parser import parser
 
