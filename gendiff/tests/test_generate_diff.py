@@ -1,39 +1,23 @@
-import os
-from gendiff.modules.generate import generate_diff
-from gendiff.parser import parser
+import pytest
+from gendiff.generate import generate_diff
+import json
 
 
-def test_json_files():
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file1_path = os.path.join(current_dir, 'fixtures', 'file1.json')
-    file2_path = os.path.join(current_dir, 'fixtures', 'file2.json')
-    first_file = parser(file1_path)
-    second_file = parser(file2_path)
-    diff_list = generate_diff(first_file, second_file)
-    correct_output = '{\n'\
-                     ' - follow: false\n'\
-                     '   host: hexlet.io\n'\
-                     ' - proxy: 123.234.53.22\n'\
-                     ' - timeout: 50\n'\
-                     ' + timeout: 20\n'\
-                     ' + verbose: true\n'\
-                     '}'
-    assert correct_output == diff_list
+P1_JSON = '/home/dima/python-project-50/gendiff/tests/fixtures/file1.json'
+P2_JSON = '/home/dima/python-project-50/gendiff/tests/fixtures/file2.json'
 
+P1_YAML = '/home/dima/python-project-50/gendiff/tests/fixtures/file1.yaml'
+P2_YAML = '/home/dima/python-project-50/gendiff/tests/fixtures/file2.yaml'
+PATH_STYLISH = '/home/dima/python-project-50/gendiff/tests/fixtures/result_stylish.txt'
 
-def test_yaml_files():
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file1_path = os.path.join(current_dir, 'fixtures', 'file1.yaml')
-    file2_path = os.path.join(current_dir, 'fixtures', 'file2.yaml')
-    first_file = parser(file1_path)
-    second_file = parser(file2_path)
-    diff_list = generate_diff(first_file, second_file)
-    correct_output = '{\n'\
-                     ' - follow: false\n'\
-                     '   host: hexlet.io\n'\
-                     ' - proxy: 123.234.53.22\n'\
-                     ' - timeout: 50\n'\
-                     ' + timeout: 20\n'\
-                     ' + verbose: true\n'\
-                     '}'
-    assert correct_output == diff_list
+OPTIONS = [
+    (P1_JSON, P2_JSON, 'stylish', PATH_STYLISH),
+    (P1_YAML, P2_YAML, 'stylish', PATH_STYLISH)
+]
+
+@pytest.mark.parametrize("path1, path2, format, path_check_file", OPTIONS)
+def test_generate_diff(path1, path2, format, path_check_file):
+    res = generate_diff(path1, path2, format)
+
+    with open(path_check_file) as check_file:
+        assert res == check_file.read()
