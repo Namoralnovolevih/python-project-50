@@ -1,10 +1,16 @@
 from gendiff.format.stylish import make_stylish
+from gendiff.format.plain import make_plain
 from gendiff.parser import make_value
+
 
 STATUS = 'status'
 VALUE = 'value'
 
-FORMAT_FUNCTIONS = {'stylish': make_stylish}
+FORMAT_FUNCTIONS = {'stylish': make_stylish,
+                    'plain': make_plain,
+                    }
+
+
 DEFAULT_FORMAT_FUNCTIONS = 'stylish'
 
 

@@ -12,3 +12,6 @@
 
 ### Пример работы пакета с плоскими yaml-файлами
 [![asciicast](https://asciinema.org/a/I69gWdMBBoVikxNKZMcxkc1V7.svg)](https://asciinema.org/a/I69gWdMBBoVikxNKZMcxkc1V7)
+
+### Пример работы пакета с вложенными структурами
+[![asciicast](https://asciinema.org/a/Xz2GdsISC6wS5mPPwuGH5XTRe.svg)](https://asciinema.org/a/Xz2GdsISC6wS5mPPwuGH5XTRe)
