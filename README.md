@@ -15,3 +15,6 @@
 
 ### Пример работы пакета с вложенными структурами
 [![asciicast](https://asciinema.org/a/Xz2GdsISC6wS5mPPwuGH5XTRe.svg)](https://asciinema.org/a/Xz2GdsISC6wS5mPPwuGH5XTRe)
+
+### Пример работы пакета с выводом плоским форматом
+[![asciicast](https://asciinema.org/a/mKrY7un0Yobj86ufhoQJ5OMgv.svg)](https://asciinema.org/a/mKrY7un0Yobj86ufhoQJ5OMgv)
