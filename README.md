@@ -18,3 +18,6 @@
 
 ### Пример работы пакета с выводом плоским форматом
 [![asciicast](https://asciinema.org/a/mKrY7un0Yobj86ufhoQJ5OMgv.svg)](https://asciinema.org/a/mKrY7un0Yobj86ufhoQJ5OMgv)
+
+### Пример работы пакета с выводом в json-формате
+[![asciicast](https://asciinema.org/a/mKrY7un0Yobj86ufhoQJ5OMgv.svg)](https://asciinema.org/a/mKrY7un0Yobj86ufhoQJ5OMgv)

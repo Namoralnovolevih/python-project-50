@@ -18,6 +18,7 @@ OPTIONS = [(P1_JSON, P2_JSON, 'stylish', PATH_STYLISH),
            (P1_YAML, P2_YAML, 'json', PATH_JSON),
            ]
 
+
 @pytest.mark.parametrize("path1, path2, format, path_check_file", OPTIONS)
 def test_generate_diff(path1, path2, format, path_check_file):
     res = generate_diff(path1, path2, format)
