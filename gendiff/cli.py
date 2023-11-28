@@ -15,7 +15,7 @@ def make_parser():
                         type=str,
                         help='Path to the second (new) file.')
     parser.add_argument('-f', '--format',
-                        dest='format',
+                        dest='format', choices=['stylish', 'plain', 'json'],
                         default='stylish',
                         type=str,
                         help='Result output format.')
