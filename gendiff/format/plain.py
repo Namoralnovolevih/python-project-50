@@ -1,4 +1,4 @@
-STATUS = 'status'
+TYPE = 'status'
 VALUE = 'value'
 
 
@@ -24,18 +24,18 @@ def make_lines(data: dict, path=[]) -> list:
     for key, values in data.items():
         path += [key]
 
-        if values[STATUS] == 'nested':
+        if values[TYPE] == 'nested':
             res += [value for value in make_lines(values[VALUE], path)]
 
-        elif values[STATUS] == 'add':
+        elif values[TYPE] == 'add':
             value = format_value(values[VALUE])
             res += [f"Property '{'.'.join(path)}'"
                     + f" was added with value: {value}"]
 
-        elif values[STATUS] == 'removed':
+        elif values[TYPE] == 'removed':
             res += [f"Property '{'.'.join(path)}' was removed"]
 
-        elif values[STATUS] == 'changed':
+        elif values[TYPE] == 'changed':
             old_value = format_value(values['old_value'])
             new_value = format_value(values['new_value'])
             res += [f"Property '{'.'.join(path)}'"

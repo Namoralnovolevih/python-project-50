@@ -1,4 +1,4 @@
-STATUS = 'status'
+TYPE = 'status'
 VALUE = 'value'
 
 BLOCK_START = '{'
@@ -37,24 +37,24 @@ def make_line(key, value, nesting):
     res = ''
     prefix = (nesting + 1) * INDENT
 
-    if value[STATUS] == 'nested':
+    if value[TYPE] == 'nested':
         res += f'\n{prefix}{key}: {BLOCK_START}' \
             + format_data(value[VALUE], nesting + 1) \
             + f'\n{prefix}{BLOCK_END}'
 
-    elif value[STATUS] == 'unchanged':
+    elif value[TYPE] == 'unchanged':
         res += f'\n{prefix}{key}: ' \
             + format_value(value[VALUE], nesting + 1)
 
-    elif value[STATUS] == 'add':
+    elif value[TYPE] == 'add':
         res += f'\n{prefix[OFFSET:]}{NEW_PREFIX}{key}: ' \
             + format_value(value[VALUE], nesting + 1)
 
-    elif value[STATUS] == 'removed':
+    elif value[TYPE] == 'removed':
         res += f'\n{prefix[OFFSET:]}{OLD_PREFIX}{key}: ' \
             + format_value(value[VALUE], nesting + 1)
 
-    elif value[STATUS] == 'changed':
+    elif value[TYPE] == 'changed':
         res += f'\n{prefix[OFFSET:]}{OLD_PREFIX}{key}: ' \
             + format_value(value['old_value'], nesting + 1)
 
